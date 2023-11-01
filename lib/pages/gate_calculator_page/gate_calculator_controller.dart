@@ -20,6 +20,12 @@ class GateCalculatorController extends GetxController {
   var dis_tol = 0.0;
   var dis_tol_textCtrl = TextEditingController().obs;
 
+  var u1Value = 80.0.obs;
+  var u2Value = 80.0.obs;
+  var u3Value = 80.0.obs;
+  var u4Value = 150.0.obs;
+  var u5Value = 150.0.obs;
+
   calculate() {
     print('ttn_for: $ttn_for');
     print('lv_inp: $lv_inp');
@@ -27,5 +33,11 @@ class GateCalculatorController extends GetxController {
     print('snr_rrel: $snr_rrel');
     print('ttnsumrel: $ttnsumrel');
     print('dis_tol: $dis_tol');
+
+    print('u1: $u1Value');
+    print('u2: $u2Value');
+    print('u3: $u3Value');
+    print('u4: $u4Value');
+    print('u5: $u5Value');
   }
 }
