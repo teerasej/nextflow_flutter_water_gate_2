@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../data/server_data.dart';
+
 class GateCalculatorController extends GetxController {
   var isLoading = false.obs;
+  var connect = Get.put(GetConnect());
 
   var ttn_for = 0.0;
   var ttn_for_textCtrl = TextEditingController().obs;
@@ -47,6 +50,26 @@ class GateCalculatorController extends GetxController {
     isLoading.value = true;
 
     await Future.delayed(Duration(seconds: 3));
+
+    var response = await connect.get(
+        "https://nextflowxegatx2023.blob.core.windows.net/server/server-data.json");
+    print(response.bodyString);
+    var serverData = ServerData.fromMap(response.body);
+
+    snr_rrel = serverData.snrRrel ?? 0;
+    snr_rrel_textCtrl.value.text = snr_rrel.toString();
+
+    ttn_for = serverData.ttnFor ?? 0;
+    ttn_for_textCtrl.value.text = ttn_for.toString();
+
+    ttnsumrel = serverData.ttnsumrel ?? 0.0;
+    ttnsumrel_textCtrl.value.text = ttnsumrel.toString();
+
+    lv_inp = ttn_for;
+    lv_inp_textCtrl.value.text = lv_inp.toString();
+
+    demand_irr = serverData.ttnDemandIrr ?? 0.0;
+    demand_irr_textCtrl.value.text = demand_irr.toString();
 
     isLoading.value = false;
   }
