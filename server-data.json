@@ -1,0 +1,13 @@
+{
+    "snr_rfore": 171.83,
+    "snr_rtail": 58.66,
+	"snr_rhead": 113.17,
+    "snr_rrel": 0.6016,
+	"sumsnrrel": 0.8376,
+	"sumsnrpump": 0.0,
+    "ttn_for": 58.17,
+    "ttn_stor": 43.6631,
+    "ttn_rel": 0.0,
+    "ttnsumrel": 0.0,
+    "ttn_demand_irr": 3
+}
