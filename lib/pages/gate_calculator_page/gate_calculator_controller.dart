@@ -26,6 +26,8 @@ class GateCalculatorController extends GetxController {
   var u4Value = 150.0.obs;
   var u5Value = 150.0.obs;
 
+  var isLoading = false.obs;
+
   calculate() {
     print('ttn_for: $ttn_for');
     print('lv_inp: $lv_inp');
@@ -39,5 +41,13 @@ class GateCalculatorController extends GetxController {
     print('u3: $u3Value');
     print('u4: $u4Value');
     print('u5: $u5Value');
+  }
+
+  Future<void> loadServerData() async {
+    isLoading.value = true;
+
+    await Future.delayed(Duration(seconds: 3));
+
+    isLoading.value = false;
   }
 }
