@@ -138,7 +138,9 @@ class GateCalculatorPage extends StatelessWidget {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.calculate();
+                  },
                   child: const Text('คำนวน'),
                 ),
               ),

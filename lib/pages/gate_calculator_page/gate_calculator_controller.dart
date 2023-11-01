@@ -19,4 +19,13 @@ class GateCalculatorController extends GetxController {
 
   var dis_tol = 0.0;
   var dis_tol_textCtrl = TextEditingController().obs;
+
+  calculate() {
+    print('ttn_for: $ttn_for');
+    print('lv_inp: $lv_inp');
+    print('demand_irr: $demand_irr');
+    print('snr_rrel: $snr_rrel');
+    print('ttnsumrel: $ttnsumrel');
+    print('dis_tol: $dis_tol');
+  }
 }
