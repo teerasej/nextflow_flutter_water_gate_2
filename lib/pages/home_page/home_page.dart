@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,7 +13,9 @@ class HomePage extends StatelessWidget {
           ListTile(
             title: Text('คำนวน'),
             leading: Icon(Icons.calculate),
-            onTap: () {},
+            onTap: () {
+              Get.toNamed('/gate-calculator');
+            },
           ),
         ],
       ),
