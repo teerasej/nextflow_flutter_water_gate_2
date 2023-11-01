@@ -5,6 +5,17 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(title: Text('Nextflow Water Gate')),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('คำนวน'),
+            leading: Icon(Icons.calculate),
+            onTap: () {},
+          ),
+        ],
+      ),
+    );
   }
 }
