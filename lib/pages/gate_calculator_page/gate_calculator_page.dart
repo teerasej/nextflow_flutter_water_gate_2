@@ -52,12 +52,52 @@ class GateCalculatorPage extends StatelessWidget {
             SizedBox(
               height: 16,
             ),
-            Text('Unit 1'),
+            Text('Unit 1 (80)'),
             Slider(
               value: 80,
               min: 80,
               max: 120,
               divisions: 4,
+              onChanged: (double value) {
+                print(value);
+              },
+            ),
+            Text('Unit 2 (80)'),
+            Slider(
+              value: 80,
+              min: 80,
+              max: 120,
+              divisions: 4,
+              onChanged: (double value) {
+                print(value);
+              },
+            ),
+            Text('Unit 3 (80)'),
+            Slider(
+              value: 80,
+              min: 80,
+              max: 120,
+              divisions: 4,
+              onChanged: (double value) {
+                print(value);
+              },
+            ),
+            Text('Unit 4 (150)'),
+            Slider(
+              value: 150,
+              min: 150,
+              max: 180,
+              divisions: 3,
+              onChanged: (double value) {
+                print(value);
+              },
+            ),
+            Text('Unit 5 (150)'),
+            Slider(
+              value: 150,
+              min: 150,
+              max: 180,
+              divisions: 3,
               onChanged: (double value) {
                 print(value);
               },
