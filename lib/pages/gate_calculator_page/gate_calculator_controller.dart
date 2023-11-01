@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class GateCalculatorController extends GetxController {
+  var isLoading = false.obs;
+
   var ttn_for = 0.0;
   var ttn_for_textCtrl = TextEditingController().obs;
 
@@ -39,5 +41,13 @@ class GateCalculatorController extends GetxController {
     print('u3: $u3Value');
     print('u4: $u4Value');
     print('u5: $u5Value');
+  }
+
+  Future<void> loadServerData() async {
+    isLoading.value = true;
+
+    await Future.delayed(Duration(seconds: 3));
+
+    isLoading.value = false;
   }
 }

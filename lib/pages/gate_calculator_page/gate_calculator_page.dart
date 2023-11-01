@@ -10,13 +10,21 @@ class GateCalculatorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    controller.loadServerData();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('คำนวนประตูน้ำ'),
       ),
-      body: SingleChildScrollView(
-        child: Obx(
-          () => Padding(
+      body: Obx(() {
+        if (controller.isLoading.value) {
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+
+        return SingleChildScrollView(
+          child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
@@ -153,8 +161,8 @@ class GateCalculatorPage extends StatelessWidget {
               ],
             ),
           ),
-        ),
-      ),
+        );
+      }),
     );
   }
 }
