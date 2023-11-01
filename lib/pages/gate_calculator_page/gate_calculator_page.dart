@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'gate_calculator_controller.dart';
 
 class GateCalculatorPage extends StatelessWidget {
-  const GateCalculatorPage({super.key});
+  GateCalculatorPage({super.key});
+
+  var controller = Get.put(GateCalculatorController());
 
   @override
   Widget build(BuildContext context) {
