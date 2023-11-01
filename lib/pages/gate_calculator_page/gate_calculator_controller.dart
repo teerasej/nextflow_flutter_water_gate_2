@@ -28,6 +28,8 @@ class GateCalculatorController extends GetxController {
   var u4Value = 150.0.obs;
   var u5Value = 150.0.obs;
 
+  var isLoading = false.obs;
+
   calculate() {
     print('ttn_for: $ttn_for');
     print('lv_inp: $lv_inp');
