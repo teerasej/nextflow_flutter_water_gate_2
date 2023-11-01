@@ -49,6 +49,19 @@ class GateCalculatorPage extends StatelessWidget {
               ),
               keyboardType: TextInputType.number,
             ),
+            SizedBox(
+              height: 16,
+            ),
+            Text('Unit 1'),
+            Slider(
+              value: 80,
+              min: 80,
+              max: 120,
+              divisions: 4,
+              onChanged: (double value) {
+                print(value);
+              },
+            ),
           ],
         ),
       ),
