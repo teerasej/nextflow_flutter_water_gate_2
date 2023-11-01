@@ -102,6 +102,16 @@ class GateCalculatorPage extends StatelessWidget {
                 print(value);
               },
             ),
+            SizedBox(
+              height: 16,
+            ),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text('คำนวน'),
+              ),
+            ),
           ],
         ),
       ),
