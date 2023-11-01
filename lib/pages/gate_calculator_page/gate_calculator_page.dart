@@ -94,44 +94,48 @@ class GateCalculatorPage extends StatelessWidget {
                     controller.u1Value.value = value;
                   },
                 ),
-                Text('Unit 2 (80)'),
+                Text('Unit 2 (${controller.u2Value.value})'),
                 Slider(
-                  value: 80,
+                  value: controller.u2Value.value,
                   min: 80,
                   max: 120,
                   divisions: 4,
+                  label: controller.u2Value.value.toString(),
                   onChanged: (double value) {
-                    print(value);
+                    controller.u2Value.value = value;
                   },
                 ),
-                Text('Unit 3 (80)'),
+                Text('Unit 3 (${controller.u3Value.value})'),
                 Slider(
-                  value: 80,
+                  value: controller.u3Value.value,
                   min: 80,
                   max: 120,
                   divisions: 4,
+                  label: controller.u3Value.value.toString(),
                   onChanged: (double value) {
-                    print(value);
+                    controller.u3Value.value = value;
                   },
                 ),
-                Text('Unit 4 (150)'),
+                Text('Unit 4 (${controller.u4Value.value})'),
                 Slider(
-                  value: 150,
+                  value: controller.u4Value.value,
                   min: 150,
                   max: 180,
                   divisions: 3,
+                  label: controller.u4Value.value.toString(),
                   onChanged: (double value) {
-                    print(value);
+                    controller.u4Value.value = value;
                   },
                 ),
-                Text('Unit 5 (150)'),
+                Text('Unit 5 (${controller.u5Value.value})'),
                 Slider(
-                  value: 150,
+                  value: controller.u5Value.value,
                   min: 150,
                   max: 180,
                   divisions: 3,
+                  label: controller.u5Value.value.toString(),
                   onChanged: (double value) {
-                    print(value);
+                    controller.u5Value.value = value;
                   },
                 ),
                 SizedBox(
