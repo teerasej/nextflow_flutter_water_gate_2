@@ -24,36 +24,54 @@ class GateCalculatorPage extends StatelessWidget {
                   labelText: 'จำลองระดับน้ำเหนือเขื่อน (m MSL)',
                 ),
                 keyboardType: TextInputType.number,
+                onChanged: (value) {
+                  controller.ttn_for = double.parse(value);
+                },
               ),
               TextField(
                 decoration: InputDecoration(
                   labelText: 'ระดับน้ำที่ต้องการยกระดับ (m MSL)',
                 ),
                 keyboardType: TextInputType.number,
+                onChanged: (value) {
+                  controller.lv_inp = double.parse(value);
+                },
               ),
               TextField(
                 decoration: InputDecoration(
                   labelText: 'แผนระบายน้ำ (m MSL)',
                 ),
                 keyboardType: TextInputType.number,
+                onChanged: (value) {
+                  controller.demand_irr = double.parse(value);
+                },
               ),
               TextField(
                 decoration: InputDecoration(
                   labelText: 'Total Sum SNR Release (MCM)',
                 ),
                 keyboardType: TextInputType.number,
+                onChanged: (value) {
+                  controller.snr_rrel = double.parse(value);
+                },
               ),
               TextField(
                 decoration: InputDecoration(
                   labelText: 'Total Sum TTN Release (MCM)',
                 ),
                 keyboardType: TextInputType.number,
+                onChanged: (value) {
+                  controller.ttnsumrel = double.parse(value);
+                },
               ),
               TextField(
                 decoration: InputDecoration(
                   labelText: 'ปั้มสูบกลับ (m MSL)',
                 ),
                 keyboardType: TextInputType.number,
+                onChanged: (value) {
+                  controller.dis_tol = double.parse(value);
+                },
               ),
               SizedBox(
                 height: 16,
