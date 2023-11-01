@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:nextflow_flutter_water_gate_2/pages/gate_calculator_page/gate_calculator_page.dart';
 import 'package:nextflow_flutter_water_gate_2/pages/home_page/home_page.dart';
 
 void main() {
@@ -22,6 +23,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/',
           page: () => HomePage(),
+        ),
+        GetPage(
+          name: '/gate-calculator',
+          page: () => GateCalculatorPage(),
         ),
       ],
     );
