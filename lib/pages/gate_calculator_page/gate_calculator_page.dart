@@ -9,6 +9,12 @@ class GateCalculatorPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('คำนวนประตูน้ำ'),
       ),
+      body: TextField(
+        decoration: InputDecoration(
+          labelText: 'จำลองระดับน้ำเหนือเขื่อน (m MSL)',
+        ),
+        keyboardType: TextInputType.number,
+      ),
     );
   }
 }
