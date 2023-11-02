@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import '../../data/server_data.dart';
 
 class GateCalculatorController extends GetxController {
+  var resultText = "".obs;
+
   var isLoading = false.obs;
   var connect = Get.put(GetConnect());
 
@@ -31,7 +33,7 @@ class GateCalculatorController extends GetxController {
   var u4Value = 150.0.obs;
   var u5Value = 150.0.obs;
 
-  calculate() {
+  void calculate() async {
     print('ttn_for: $ttn_for');
     print('lv_inp: $lv_inp');
     print('demand_irr: $demand_irr');
@@ -44,6 +46,42 @@ class GateCalculatorController extends GetxController {
     print('u3: $u3Value');
     print('u4: $u4Value');
     print('u5: $u5Value');
+
+    resultText.value = "";
+
+    var body = {
+      "lv_inp": lv_inp,
+      "ttn_for_inp": ttn_for,
+      "demand_irr": demand_irr,
+      "snr_rrel": snr_rrel,
+      "ttnsumrel": ttnsumrel,
+      "u1": true,
+      "u2": true,
+      "u3": true,
+      "u4": true,
+      "u5": true,
+      "u1s": u1Value.value,
+      "u2s": u2Value.value,
+      "u3s": u3Value.value,
+      "u4s": u4Value.value,
+      "u5s": u5Value.value
+    };
+
+    print(body);
+
+    var response = await connect.post(
+      'https://waterlevelapi.azurewebsites.net/level-api.php',
+      body,
+      contentType: 'application/json',
+    );
+
+    if (response.status.hasError) {
+      print('Error: ${response.statusText}');
+    } else {
+      print('Success: ${response.bodyString}');
+    }
+
+    resultText.value += response.body["output"].toString();
   }
 
   Future<void> loadServerData() async {
