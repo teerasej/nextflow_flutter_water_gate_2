@@ -91,16 +91,28 @@ class GateCalculatorPage extends StatelessWidget {
                 SizedBox(
                   height: 16,
                 ),
-                Text('Unit 1 (${controller.u1Value.value})'),
+                Row(
+                  children: [
+                    Checkbox(
+                      value: controller.u1Enabled.value,
+                      onChanged: (bool? value) {
+                        controller.u1Enabled.value = value!;
+                      },
+                    ),
+                    Text('Unit 1 (${controller.u1Value.value})'),
+                  ],
+                ),
                 Slider(
                   value: controller.u1Value.value,
                   min: 80,
                   max: 120,
                   divisions: 4,
                   label: controller.u1Value.value.toString(),
-                  onChanged: (double value) {
-                    controller.u1Value.value = value;
-                  },
+                  onChanged: controller.u1Enabled.value
+                      ? (double value) {
+                          controller.u1Value.value = value;
+                        }
+                      : null,
                 ),
                 Text('Unit 2 (${controller.u2Value.value})'),
                 Slider(
