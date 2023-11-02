@@ -34,6 +34,10 @@ class GateCalculatorController extends GetxController {
   var u5Value = 150.0.obs;
 
   var u1Enabled = true.obs;
+  var u2Enabled = true.obs;
+  var u3Enabled = true.obs;
+  var u4Enabled = true.obs;
+  var u5Enabled = true.obs;
 
   void calculate() async {
     print('ttn_for: $ttn_for');

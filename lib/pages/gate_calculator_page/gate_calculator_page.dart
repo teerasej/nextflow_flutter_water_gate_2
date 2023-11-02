@@ -114,49 +114,97 @@ class GateCalculatorPage extends StatelessWidget {
                         }
                       : null,
                 ),
-                Text('Unit 2 (${controller.u2Value.value})'),
+                Row(
+                  children: [
+                    Checkbox(
+                      value: controller.u2Enabled.value,
+                      onChanged: (bool? value) {
+                        controller.u2Enabled.value = value!;
+                      },
+                    ),
+                    Text('Unit 2 (${controller.u2Value.value})'),
+                  ],
+                ),
                 Slider(
                   value: controller.u2Value.value,
                   min: 80,
                   max: 120,
                   divisions: 4,
                   label: controller.u2Value.value.toString(),
-                  onChanged: (double value) {
-                    controller.u2Value.value = value;
-                  },
+                  onChanged: controller.u2Enabled.value
+                      ? (double value) {
+                          controller.u2Value.value = value;
+                        }
+                      : null,
                 ),
-                Text('Unit 3 (${controller.u3Value.value})'),
+                Row(
+                  children: [
+                    Checkbox(
+                      value: controller.u3Enabled.value,
+                      onChanged: (bool? value) {
+                        controller.u3Enabled.value = value!;
+                      },
+                    ),
+                    Text('Unit 3 (${controller.u3Value.value})'),
+                  ],
+                ),
                 Slider(
                   value: controller.u3Value.value,
                   min: 80,
                   max: 120,
                   divisions: 4,
                   label: controller.u3Value.value.toString(),
-                  onChanged: (double value) {
-                    controller.u3Value.value = value;
-                  },
+                  onChanged: controller.u3Enabled.value
+                      ? (double value) {
+                          controller.u3Value.value = value;
+                        }
+                      : null,
                 ),
-                Text('Unit 4 (${controller.u4Value.value})'),
+                Row(
+                  children: [
+                    Checkbox(
+                      value: controller.u4Enabled.value,
+                      onChanged: (bool? value) {
+                        controller.u4Enabled.value = value!;
+                      },
+                    ),
+                    Text('Unit 4 (${controller.u4Value.value})'),
+                  ],
+                ),
                 Slider(
                   value: controller.u4Value.value,
                   min: 150,
                   max: 180,
                   divisions: 3,
                   label: controller.u4Value.value.toString(),
-                  onChanged: (double value) {
-                    controller.u4Value.value = value;
-                  },
+                  onChanged: controller.u4Enabled.value
+                      ? (double value) {
+                          controller.u4Value.value = value;
+                        }
+                      : null,
                 ),
-                Text('Unit 5 (${controller.u5Value.value})'),
+                Row(
+                  children: [
+                    Checkbox(
+                      value: controller.u5Enabled.value,
+                      onChanged: (bool? value) {
+                        controller.u5Enabled.value = value!;
+                      },
+                    ),
+                    Text('Unit 5 (${controller.u5Value.value})'),
+                  ],
+                ),
                 Slider(
                   value: controller.u5Value.value,
                   min: 150,
                   max: 180,
                   divisions: 3,
                   label: controller.u5Value.value.toString(),
-                  onChanged: (double value) {
-                    controller.u5Value.value = value;
-                  },
+                  onChanged: controller.u5Enabled.value
+                      ? (double value) {
+                          controller.u5Value.value = value;
+                        }
+                      : null,
                 ),
                 SizedBox(
                   height: 16,
